@@ -1,4 +1,5 @@
 {
+  ".gitattributes": "1461598118485",
   "Component.js": "1461083166683",
   "controller/main.controller.js": "1461295211405",
   "css/style.css": "1461083167041",
@@ -17,7 +18,7 @@
   "resources/image/logo1.jpg": "1461083168169",
   "resources/image/logo2.jpg": "1461083168098",
   "resources/image/logo3.jpg": "1461083167993",
-  "resources/sap-ui-core.js": "1460381894466",
+  "resources/sap-ui-core.js": "1461083169202",
   "view/Cargo.fragment.xml": "1461083167657",
   "view/Direccion.fragment.xml": "1461083167682",
   "view/Load.fragment.xml": "1461083167700",
