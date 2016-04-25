@@ -1,0 +1,52 @@
+{
+  "welcomeFile": "/webapp/index.html",
+  "authenticationMethod": "none",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "USA_SGW",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "USA_SGW"
+    },
+    {
+      "path": "/sap/bc/ui5_ui5",
+      "target": {
+        "type": "destination",
+        "name": "USA_SGW",
+        "entryPath": "/sap/bc/ui5_ui5"
+      },
+      "description": "USA_SGW"
+    }
+  ],
+  "sendWelcomeFileRedirect": true,
+  "securityConstraints": [
+    {
+      "permission": "AccessApplicationDescriptor",
+      "description": "Access application descriptor",
+      "protectedPaths": [
+        "/neo-app.json"
+      ]
+    }
+  ]
+}

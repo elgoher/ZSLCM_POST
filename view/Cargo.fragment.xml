@@ -1,0 +1,265 @@
+<core:FragmentDefinition
+
+
+
+
+
+
+
+  xmlns="sap.m"
+
+
+
+
+
+
+
+  xmlns:core="sap.ui.core">
+
+
+
+
+
+
+
+   <TableSelectDialog
+
+
+
+
+
+
+
+        id="oTSDCargo"
+
+
+
+
+
+
+
+		noDataText="No se encontraron cargos"
+
+
+
+
+
+
+
+		title="Seleccionar Cargo"
+
+
+
+
+
+
+
+		search="handleCargoSearch"
+
+
+
+
+
+
+
+		confirm="handleCargoConfirm"
+
+
+
+
+
+
+
+		close="handleCargoClose">
+
+
+
+
+
+
+
+		<ColumnListItem>
+
+
+
+
+
+
+
+			<cells>
+
+
+
+
+
+
+
+				<ObjectIdentifier
+
+
+
+
+
+
+
+					title="{Taete}" />
+
+
+
+
+
+
+
+				<Text text="{Ltext}" />	
+
+
+
+
+
+
+
+			</cells>
+
+
+
+
+
+
+
+		</ColumnListItem>
+
+
+
+
+
+
+
+		<columns>
+
+
+
+
+
+
+
+			<Column width = "20%">
+
+
+
+
+
+
+
+				<header>
+
+
+
+
+
+
+
+					<Text text="Codigo" />
+
+
+
+
+
+
+
+				</header>
+
+
+
+
+
+
+
+			</Column>
+
+
+
+
+
+
+
+			<Column
+
+
+
+
+
+
+
+				minScreenWidth="Tablet"
+
+
+
+
+
+
+
+				demandPopin="true"
+
+
+
+
+
+
+
+				hAlign="Center">
+
+
+
+
+
+
+
+				<header>
+
+
+
+
+
+
+
+					<Text text="Cargo" />
+
+
+
+
+
+
+
+				</header>
+
+
+
+
+
+
+
+			</Column>
+
+
+
+
+
+
+
+		</columns>
+
+
+
+
+
+
+
+	</TableSelectDialog>
+
+
+
+
+
+
+
+</core:FragmentDefinition>

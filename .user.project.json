@@ -1,0 +1,68 @@
+{
+  "run": [
+    {
+      "filePath": "/ZSLCM_POST/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [
+        {
+          "paramName": "odata",
+          "paramValue": "UED_190",
+          "paramActive": true
+        },
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": false
+        }
+      ],
+      "_metadata": {
+        "id": 9669917,
+        "runnerId": "webapprunner",
+        "displayName": "New Web Application 1"
+      }
+    },
+    {
+      "filePath": "/ZSLCM_POST/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "urlParameters": null,
+      "_metadata": {
+        "id": 8073088,
+        "runnerId": "qunitrunner",
+        "displayName": "New Unit Test"
+      }
+    },
+    {
+      "filePath": "/ZSLCM_POST/Component.js",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": false
+        },
+        {
+          "paramName": "",
+          "paramValue": "",
+          "paramActive": false
+        }
+      ],
+      "_metadata": {
+        "id": 2832224,
+        "runnerId": "fiorirunner",
+        "displayName": "New SAP Fiori Component on Sandbox"
+      }
+    }
+  ]
+}

@@ -1,0 +1,725 @@
+.centrar {
+
+
+
+    margin: 0 auto;
+
+
+
+}
+
+
+
+.espacio-top {
+
+
+
+    padding-top: 0.5em;
+
+
+
+}
+
+
+
+.letra-pequena {
+
+
+
+    font-size: 0.5rem;
+
+
+
+}
+
+
+
+.margen-izq-2-5 {
+
+
+
+    margin-left: 2.5em;
+
+
+
+}
+
+
+
+.margen-izq-10 {
+
+
+
+    margin-left: 50%;
+
+
+
+}
+
+
+
+.word-wrap {
+
+
+
+    white-space: pre-line;
+
+
+
+}
+
+
+
+.ancho-100 {
+
+
+
+    width: 100%;
+
+
+
+}
+
+
+
+.warning {
+
+
+
+    border: 1px solid #f0ab00;
+
+
+
+}
+
+
+
+.no-editable {
+
+
+
+    background-color: #f2f2f2;
+
+
+
+}
+
+
+
+.responsive-img {
+
+
+
+    max-width: 100% !important;
+
+
+
+    height: auto;
+
+
+
+    display: block;
+
+
+
+    margin: 0 auto;
+
+
+
+}
+
+
+
+.responsive-img-movil {
+
+
+
+    max-width: 60% !important;
+
+
+
+    height: auto;
+
+
+
+    display: block;
+
+
+
+    margin: 0 auto;
+
+
+
+}
+
+
+
+/*span[id="oCB"] {*/
+
+
+
+
+
+
+
+/*    height: 50px;*/
+
+
+
+
+
+
+
+/*}*/
+
+
+
+
+
+
+
+label[id="oCB-label"] {
+
+
+
+    font-weight: bold;
+
+
+
+    color: black;
+
+
+
+    white-space: pre-line;
+
+
+
+    height: auto;
+
+
+
+    line-height: normal;
+
+
+
+}
+
+
+
+div[id="oCB-CbBg"] {
+
+
+
+    top: 0rem;
+
+
+
+}
+
+
+
+span[id="oTNumeral"] {
+
+
+
+    line-height: 40px;
+
+
+
+    font-weight: bold;
+
+
+
+}
+
+
+
+label[id="oLmenos_copy"] {
+
+
+
+    line-height: 40px;
+
+
+
+    font-weight: bold;
+
+
+
+    color: black;
+
+
+
+}
+
+
+
+label[id="oLmenos_copy"]:after {
+
+
+
+    display: none;
+
+
+
+}
+
+
+
+/*label[for="oCB-CB"] {*/
+
+
+
+
+
+
+
+/*    font-weight: bold;*/
+
+
+
+
+
+
+
+/*    font-size: 1rem;*/
+
+
+
+
+
+
+
+/*    white-space: pre-line;*/
+
+
+
+
+
+
+
+/*}*/
+
+
+
+
+
+
+
+input.sapMInputBaseInner.sapMInputBaseReadonlyInner {
+
+
+
+    border: 1px solid #c0c0c0;
+
+
+
+    background-color: #f2f2f2;
+
+
+
+}
+
+
+
+div.sapUiLocalBusyIndicatorAnimation {
+
+
+
+    display: none;
+
+
+
+}
+
+
+
+div.sapUiLocalBusyIndicator {
+
+
+
+    background-color: rgba(255, 255, 255, 0);
+
+
+
+}
+
+
+
+svg.sapMBusySvg {
+
+
+
+    stroke: #00457C;
+
+
+
+}
+
+
+
+.sapMInputBaseInner:not(.sapMInputBaseReadonlyInner):not(.sapMInputBaseStateInner):focus,
+
+
+
+.sapMInputBaseInner:not(.sapMInputBaseReadonlyInner):not(.sapMInputBaseStateInner):not(.sapMInputBaseDisabledInner):hover {
+
+
+
+    border-color: #00457C;
+
+
+
+}
+
+
+
+.sap-desktop .sapMSlt:focus,
+
+
+
+.sapMSltHoverable:hover {
+
+
+
+    border-color: #00457C;
+
+
+
+}
+
+
+
+.sapMSltPressed>.sapMSltArrow {
+
+
+
+    background: #00457C;
+
+
+
+}
+
+
+
+.sapMInputVH:not(.sapMInputBaseReadonly) .sapMInputValHelp>.sapMInputValHelpInner:active {
+
+
+
+    background-color: #00457C;
+
+
+
+}
+
+
+
+:not(.sapMBtnDisabled)>.sapMBtnInner.sapMBtnActive {
+
+
+
+    background-color: #00457C;
+
+
+
+}
+
+
+
+.sapMBtn:hover>.sapMBtnHoverable.sapMBtnAccept:not(.sapMBtnActive) {
+
+
+
+    background-color: #0E5791;
+
+
+
+    border-color: #0E5791;
+
+
+
+}
+
+
+
+:not(.sapMBtnDisabled)>div.sapMBtnInner.sapMBtnAccept.sapMBtnActive {
+
+
+
+    background-color: #001A2F;
+
+
+
+    border-color: #001A2F;
+
+
+
+}
+
+
+
+.sapMComboBoxBasePressed .sapMComboBoxBaseArrow,
+
+
+
+.sap-desktop .sapMComboBoxBasePressed .sapMComboBoxBaseArrow:hover {
+
+
+
+    background: #00457C;
+
+
+
+}
+
+
+
+.sapMPageHeader::before {
+
+
+
+    border-top: 0.25rem solid #00457C;
+
+
+
+}
+
+
+
+.sapMGlobalBackgroundImage.sapUiUfdShellBG,
+
+
+
+.sapMGlobalBackgroundImage.sapUshellShellBG,
+
+
+
+.sapMShellGlobalOuterBackground>.sapMGlobalBackgroundImage {
+
+
+
+    background-color: #00457C;
+
+
+
+}
+
+
+
+.sapMShellBrandingBar {
+
+
+
+    background-color: #00457C;
+
+
+
+}
+
+
+
+.sapMIBar.sapMSubHeader-CTX {
+
+
+
+    background-color: #00457C;
+
+
+
+}
+
+
+
+.sapMIBar-CTX .sapMTitle {
+
+
+
+    color: #f7f7f7;
+
+
+
+}
+
+
+
+.sapMBtnIcon {
+
+
+
+    color: #f7f7f7;
+
+
+
+}
+
+
+
+section[id="__page0-cont"] {
+
+
+
+    background-color: #ffffff;
+
+
+
+}
+
+
+
+div[id="__xmlview0--idIconTabBar--header"] {
+
+
+
+    background-color: #eaeaea;
+
+
+
+}
+
+
+
+.sapMITBSelected .sapMITBFilterNeutral {
+
+
+
+    background: #00457C;
+
+
+
+}
+
+
+
+.sapMITBFilterNeutral {
+
+
+
+    color: #00457C;
+
+
+
+    border-color: #00457C;
+
+
+
+}
+
+
+
+.sapMITBSelected.sapMITBFilterNeutral>.sapMITBContentArrow {
+
+
+
+    border-bottom-color: #00457C;
+
+
+
+}
+
+
+
+div.sapMBtnInner.sapMBtnAccept {
+
+
+
+    background-color: #00457C;
+
+
+
+    border-color: #00457C;
+
+
+
+}
+
+
+
+.sapMLIB.sapMLIBSelected,
+
+
+
+.sapMLIB.sapMLIBSelected>td {
+
+
+
+    background: #00457C;
+
+
+
+    color: #f7f7f7;
+
+
+
+}
+
+
+
+.sapMSelectListItemSelected {
+
+
+
+    background: #00457C;
+
+
+
+    color: #f7f7f7;
+
+
+
+}
+
+
+
+.sapMSelectListItemHoverable:hover {
+
+
+
+    background: #f0f0f0;
+
+
+
+    color: #333333;
+
+
+
+}
+
+
+
+.sapMSelectListItem.sapMSelectListItemPressed {
+
+
+
+    background: #00457C;
+
+
+
+}
+
+
+
+.sap-desktop .sapMLIBSelected:not(.sapMLIBActive):not(.sapMALI):hover,
+
+
+
+.sap-desktop .sapMListUl:not(.sapMListModeDelete):not(.sapMListModeNone) .sapMLIBSelected:not(.sapMLIBActive):not(.sapMALI):hover,
+
+
+
+.sap-desktop .sapMLIBSelected:not(.sapMLIBActive):not(.sapMALI):hover>td,
+
+
+
+.sap-desktop .sapMLIBSelected:not(.sapMLIBActive):not(.sapMALI):hover + .sapMListTblSubRow,
+
+
+
+.sap-desktop .sapMLIBSelected:not(.sapMLIBActive):not(.sapMALI) + .sapMListTblSubRow:hover {
+
+
+
+    background: #00457C;
+
+
+
+}

@@ -1,0 +1,265 @@
+<core:FragmentDefinition
+
+
+
+
+
+
+
+  xmlns="sap.m"
+
+
+
+
+
+
+
+  xmlns:core="sap.ui.core">
+
+
+
+
+
+
+
+   <TableSelectDialog
+
+
+
+
+
+
+
+        id="oTSDTitulo"
+
+
+
+
+
+
+
+		noDataText="No se encontraron titulos"
+
+
+
+
+
+
+
+		title="Seleccionar Titulo"
+
+
+
+
+
+
+
+		search="handleTituloSearch"
+
+
+
+
+
+
+
+		confirm="handleTituloConfirm"
+
+
+
+
+
+
+
+		close="handleTituloClose">
+
+
+
+
+
+
+
+		<ColumnListItem>
+
+
+
+
+
+
+
+			<cells>
+
+
+
+
+
+
+
+				<ObjectIdentifier
+
+
+
+
+
+
+
+					title="{Objid}" />
+
+
+
+
+
+
+
+				<Text text="{Stext}" />	
+
+
+
+
+
+
+
+			</cells>
+
+
+
+
+
+
+
+		</ColumnListItem>
+
+
+
+
+
+
+
+		<columns>
+
+
+
+
+
+
+
+			<Column width = "20%">
+
+
+
+
+
+
+
+				<header>
+
+
+
+
+
+
+
+					<Text text="Codigo" />
+
+
+
+
+
+
+
+				</header>
+
+
+
+
+
+
+
+			</Column>
+
+
+
+
+
+
+
+			<Column
+
+
+
+
+
+
+
+				minScreenWidth="Tablet"
+
+
+
+
+
+
+
+				demandPopin="true"
+
+
+
+
+
+
+
+				hAlign="Center">
+
+
+
+
+
+
+
+				<header>
+
+
+
+
+
+
+
+					<Text text="Titulo" />
+
+
+
+
+
+
+
+				</header>
+
+
+
+
+
+
+
+			</Column>
+
+
+
+
+
+
+
+		</columns>
+
+
+
+
+
+
+
+	</TableSelectDialog>
+
+
+
+
+
+
+
+</core:FragmentDefinition>

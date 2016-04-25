@@ -1,0 +1,35 @@
+{
+  "generation": [
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationProject",
+      "templateVersion": "1.32.0",
+      "dateTimeStamp": "Fri, 08 Jan 2016 22:04:34 GMT"
+    },
+    {
+      "templateId": "servicecatalog.connectivityComponent",
+      "templateVersion": "1.0.0",
+      "dateTimeStamp": "Wed, 24 Feb 2016 21:01:19 GMT"
+    }
+  ],
+  "translation": {
+    "supportedLanguages": "es",
+    "defaultLanguage": "es",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "projectType": [
+    "sap.watt.uitools.ide.fiori",
+    "sap.watt.uitools.ide.web"
+  ],
+  "mockpreview": {
+    "loadJSONFiles": true,
+    "mockUri": "/sap/opu/odata/sap/ZSLCM_POSTGRADOS_SRV",
+    "metadataFilePath": "",
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "deploy": {
+    "destination": "USA_SGW",
+    "name": "ZSLCM_POST"
+  }
+}

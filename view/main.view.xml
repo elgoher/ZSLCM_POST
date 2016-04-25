@@ -1,0 +1,3093 @@
+<mvc:View xmlns:commons="sap.ui.commons" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:sap.comp.variants="sap.ui.comp.variants" xmlns:sap.ui.core="sap.ui.core" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns="sap.m" controllerName="com.usa.postgrados.controller.main" id="">
+
+
+
+	<App>
+
+
+
+		<pages>
+
+
+
+			<Page showFooter="false" showNavButton="false" showSubHeader="true">
+
+
+
+				<customHeader>
+
+
+
+					<Bar>
+
+
+
+						<contentLeft>
+
+
+
+							<Image densityAware="false" height="45px" id="oImgUsaLogo"/>
+
+
+
+						</contentLeft>
+
+
+
+					</Bar>
+
+
+
+				</customHeader>
+
+
+
+				<subHeader>
+
+
+
+					<Toolbar>
+
+
+
+						<Button id="oBtnSalir" press="onPress" type="Back"/>
+
+
+
+						<ToolbarSpacer/>
+
+
+
+						<Title level="H1" text="Inscripciones Postgrados"/>
+
+
+
+						<ToolbarSpacer/>
+
+
+
+					</Toolbar>
+
+
+
+				</subHeader>
+
+
+
+				<content>
+
+
+
+					<IconTabBar applyContentPadding="false" class="sapUiResponsiveContentPadding" expandable="false" expanded="true" id="idIconTabBar" select="handleIconTabBarSelect" stretchContentHeight="false" upperCase="false">
+
+
+
+						<items>
+
+
+
+							<IconTabFilter design="Horizontal" icon="sap-icon://add-product" iconColor="Neutral" id="oITFDatosInscripcion" text="Datos Inscripción">
+
+
+
+								<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" emptySpanM="0" id="__form1" columnsL="2" columnsM="2" emptySpanL="0" editable="true" emptySpanS="0" labelMinWidth="192" labelSpanM="4" labelSpanS="12" layout="ResponsiveGridLayout" minWidth="0" width="100%">
+
+
+
+									<sap.ui.layout.form:content>
+
+
+
+										<Label id="__label4" required="true" text="Sede" textAlign="Begin" width="100%"/>
+
+
+
+										<Select autoAdjustWidth="true" change="OnSelectionChangeSede" items="{/SedeSet}" id="oCBSede">
+
+
+
+										    <items>
+
+
+
+												<sap.ui.core:ListItem id="oLISede" key="{Sobid}" text="{Stext}"/>
+
+
+
+											</items>
+
+
+
+										<layoutData>
+
+
+
+										    <l:GridData spanXL="0" spanL="0" spanM="0" spanS="0" indentXL="0" indentL="0" indentM="0" indentS="0" spanLarge="0" spanMedium="0" spanSmall="0" indentLarge="0" indentMedium="0" indentSmall="0" id="__data40"/>
+
+
+
+										</layoutData>
+
+
+
+										</Select>
+
+
+
+										<!--<ComboBox editable="true" id="oCBSede" items="{/SedeSet}" maxWidth="60%" selectionChange="OnSelectionChangeSede" width="50%">-->
+
+
+
+										<!--	<items>-->
+
+
+
+										<!--		<sap.ui.core:ListItem id="oLISede" key="{Sobid}" text="{Stext}"/>-->
+
+
+
+										<!--	</items>-->
+
+
+
+										<!--</ComboBox>-->
+
+
+
+										<Label id="__label5" required="true" text="Tipo de Programa" width="100%"/>
+
+
+
+										<Select autoAdjustWidth="true" change="OnSelectionChangeTipoProg" id="oCBTipoPrograma">
+
+
+
+										    <items>
+
+
+
+										        <sap.ui.core:ListItem id="oLITipoPrograma"/>
+
+
+
+											</items>
+
+
+
+										<layoutData>
+
+
+
+										    <l:GridData spanXL="0" spanL="0" spanM="0" spanS="0" indentXL="0" indentL="0" indentM="0" indentS="0" spanLarge="0" spanMedium="0" spanSmall="0" indentLarge="0" indentMedium="0" indentSmall="0" id="__data42"/>
+
+
+
+										</layoutData>
+
+
+
+										</Select>
+
+
+
+										<!--<ComboBox editable="true" id="oCBTipoPrograma" maxWidth="60%" selectionChange="OnSelectionChangeTipoProg" width="50%">-->
+
+
+
+										<!--	<items>-->
+
+
+
+										<!--		<sap.ui.core:ListItem id="oLITipoPrograma"/>-->
+
+
+
+										<!--	</items>-->
+
+
+
+										<!--</ComboBox>-->
+
+
+
+										<Label id="__label6" required="true" text="Nombre de Programa" width="100%"/>
+
+
+
+										<Select autoAdjustWidth="true" change="datosSelPrograma" id="oCBNomPrograma">
+
+
+
+										    <items>
+
+
+
+										        <sap.ui.core:ListItem id="oLInomPrograma"/>
+
+
+
+											</items>
+
+
+
+										<layoutData>
+
+
+
+										    <l:GridData spanXL="0" spanL="5" spanM="5" spanS="0" indentXL="0" indentL="0" indentM="0" indentS="0" spanLarge="5" spanMedium="5" spanSmall="0" indentLarge="0" indentMedium="0" indentSmall="0" id="__data43"/>
+
+
+
+										</layoutData>
+
+
+
+										</Select>
+
+
+
+										<!--<ComboBox id="oCBNomPrograma" maxWidth="60%" selectionChange="datosSelPrograma" width="60%">-->
+
+
+
+										<!--	<items>-->
+
+
+
+										<!--		<sap.ui.core:ListItem id="oLInomPrograma"/>-->
+
+
+
+										<!--	</items>-->
+
+
+
+										<!--</ComboBox>-->
+
+
+
+									</sap.ui.layout.form:content>
+
+
+
+									<sap.ui.layout.form:title>
+
+
+
+										<sap.ui.core:Title id="oTSelProg" text="Selección de Programa"/>
+
+
+
+									</sap.ui.layout.form:title>
+
+
+
+								</sap.ui.layout.form:SimpleForm>
+
+
+
+							</IconTabFilter>
+
+
+
+							<IconTabSeparator icon="sap-icon://open-command-field"/>
+
+
+
+							<IconTabFilter design="Horizontal" icon="sap-icon://customer-and-contacts" iconColor="Neutral" id="oITFDatosPersonales" text="Datos Personales">
+
+
+
+								<content>
+
+
+
+									<sap.ui.layout.form:Form busyIndicatorDelay="1000" editable="true" id="__form0" width="100%">
+
+
+
+										<sap.ui.layout.form:layout>
+
+
+
+											<sap.ui.layout.form:ResponsiveGridLayout emptySpanM="1" breakpointL="800" breakpointM="400" columnsL="3" columnsM="1" emptySpanL="1" emptySpanS="1" id="__layout0" labelSpanL="4" labelSpanM="4" labelSpanS="12"/>
+
+
+
+										</sap.ui.layout.form:layout>
+
+
+
+										<sap.ui.layout.form:title>
+
+
+
+											<sap.ui.core:Title id="__title0" text="Información Personal"/>
+
+
+
+										</sap.ui.layout.form:title>
+
+
+
+										<sap.ui.layout.form:formContainers>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container6">
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element23">
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="__label12" required="true" text="Tipo Identificación" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Select change="onChangeTipoId" id="oSTipId" items="{/Tipo_docSet}" selectedItem="Element sap.ui.core.ListItem#oI_Vacio" selectedItemId="oI_Vacio" selectedKey="oI_Vacio">
+
+
+
+																<items>
+
+
+
+																	<sap.ui.core:ListItem id="oI_Vacio" key="oI_Vacio" text=""/>
+
+
+
+																	<sap.ui.core:ListItem id="oI_TipId" key="{Type}" text="{Text}"/>
+
+
+
+																</items>
+
+
+
+															</Select>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container7">
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element24">
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="__label13" required="true" text="Número de Identificación" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Input change="onChangeTipoId" id="oINumId" type="Number" width="100%"/>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container5">
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element21">
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<HBox alignItems="Stretch" id="__hbox0" justifyContent="Center" width="100%">
+
+
+
+																<items>
+
+
+
+																	<Button id="OBtnBuscarEst" press="onPress" text="Buscar" width="100px"/>
+
+
+
+																</items>
+
+
+
+															</HBox>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+										</sap.ui.layout.form:formContainers>
+
+
+
+									</sap.ui.layout.form:Form>
+
+
+
+									<sap.ui.layout.form:Form editable="true" id="__form2">
+
+
+
+										<sap.ui.layout.form:layout>
+
+
+
+											<sap.ui.layout.form:ResponsiveGridLayout breakpointL="800" breakpointM="400" columnsM="1" emptySpanL="1" emptySpanM="1" emptySpanS="1" id="__layout1" labelSpanM="4"/>
+
+
+
+										</sap.ui.layout.form:layout>
+
+
+
+										<sap.ui.layout.form:formContainers>
+
+
+
+											<sap.ui.layout.form:FormContainer>
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement>
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLNombres" required="true" text="Primer Nombre / Segundo Nombre" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Input change="validarNombreApellido" editable="false" id="oIPrimerNom" value="{Nombres}" width="100%"/>
+
+
+
+															<Input change="validarNombreApellido" editable="false" id="oISegundoNom" value="{Nombres2}" width="100%"/>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+													<sap.ui.layout.form:FormElement>
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLApellidos" required="true" text="Primer Apellido / Segundo Apellido" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Input change="validarNombreApellido" editable="false" id="oIprimerAp" value="{Apellidos}" width="100%"/>
+
+
+
+															<Input change="validarNombreApellido" editable="false" id="oISegundoAp" value="{Apellidos2}" width="100%"/>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer>
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement>
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLTipSangre" required="true" text="Tipo de sangre y RH" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Select busy="true" change="datosDatosPersonales" class="no-editable" id="oSTipSangre" selectedKey="{ZzSangre}">
+
+
+
+																<items>
+
+
+
+																	<sap.ui.core:ListItem id="oLIVacio" key="oLIVacio" text=""/>
+
+
+
+																	<sap.ui.core:ListItem id="O_Pos" key="O+" text="O +"/>
+
+
+
+																	<sap.ui.core:ListItem id="O_Neg" key="O-" text="O -"/>
+
+
+
+																	<sap.ui.core:ListItem id="A_Pos" key="A+" text="A +"/>
+
+
+
+																	<sap.ui.core:ListItem id="A_Neg" key="A-" text="A -"/>
+
+
+
+																	<sap.ui.core:ListItem id="B_Pos" key="B+" text="B +"/>
+
+
+
+																	<sap.ui.core:ListItem id="B_Neg" key="B-" text="B -"/>
+
+
+
+																	<sap.ui.core:ListItem id="AB_Pos" key="AB+" text="AB +"/>
+
+
+
+																	<sap.ui.core:ListItem id="AB_Neg" key="AB-" text="AB -"/>
+
+
+
+																</items>
+
+
+
+															</Select>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+													<sap.ui.layout.form:FormElement>
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLGenero" required="true" text="Genero" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Select busy="true" change="datosDatosPersonales" class="no-editable" id="oSGenero" selectedKey="{Sexo}">
+
+
+
+																<items>
+
+
+
+																	<sap.ui.core:ListItem id="oLIGenero_vacio" key="oLIGenero_vacio" text=""/>
+
+
+
+																	<sap.ui.core:ListItem id="1" key="1" text="Masculino"/>
+
+
+
+																	<sap.ui.core:ListItem id="2" key="2" text="Femenino"/>
+
+
+
+																</items>
+
+
+
+															</Select>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer>
+
+
+
+												<sap.ui.layout.form:formElements/>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer>
+
+
+
+												<sap.ui.layout.form:formElements/>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer>
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement>
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLFechaNac" required="true" text="Fecha de Nacimiento" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<DatePicker dateValue="{path:'FechaNac', formatter:'fnDateTimeFormatter'}" displayFormat="dd-MM-YYYY" editable="false" id="oDPFechaNac" width="100%"/>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container10">
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element26">
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLEmail" required="true" text="Correo Electrónico" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Input change="validarEmail" editable="false" id="oIEmail" type="Email" value="{Email}" width="100%"/>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container10_copy">
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement>
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLPaisNac" required="true" text="País de Nacimiento" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Select busy="true" change="onChangePais" class="no-editable" id="oCBPaisNac" items="{/PaisSet}" selectedKey="{Gblnd}" width="100%">
+
+
+
+																<items>
+
+
+
+																	<sap.ui.core:ListItem id="oLIPaisNac" key="{Land1}" text="{Landx}"/>
+
+
+
+																</items>
+
+
+
+															</Select>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element46">
+
+
+
+													    <sap.ui.layout.form:label>
+
+
+
+													        <Label id="oLDptoNac" class="word-wrap" text="Departamento de Nacimiento" width="100%" required="true"/>
+
+
+
+													    </sap.ui.layout.form:label>
+
+
+
+													    <sap.ui.layout.form:fields>
+
+
+
+													        <Select id="oCBDptoNac" class="no-editable" busy="true" width="100%" selectedKey="{Gbdep}">
+
+
+
+													            <items>
+
+
+
+													                <sap.ui.core:ListItem id="oLIDptoNac"/>
+
+
+
+													            </items>
+
+
+
+													        </Select>
+
+
+
+													    </sap.ui.layout.form:fields></sap.ui.layout.form:FormElement>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element47">
+
+
+
+													    <sap.ui.layout.form:label>
+
+
+
+													        <Label id="oLCiudadNac" class="word-wrap" text="Ciudad de Nacimiento" width="100%" required="true"/>
+
+
+
+													    </sap.ui.layout.form:label>
+
+
+
+													    <sap.ui.layout.form:fields>
+
+
+
+													        <Input id="oICiudadNac" value="{Gbort}" width="100%" editable="false"/>
+
+
+
+													    </sap.ui.layout.form:fields></sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:formElements>
+
+
+
+											    <sap.ui.layout.form:FormElement id="__element48">
+
+
+
+											        <sap.ui.layout.form:label>
+
+
+
+											            <Label id="oLPaisRes" class="word-wrap" text="País Residencia" width="100%" required="true"/>
+
+
+
+											        </sap.ui.layout.form:label>
+
+
+
+											        <sap.ui.layout.form:fields>
+
+
+
+											            <Select id="oCBPaisRes" change="onChangePais" class="no-editable" busy="true" width="100%" selectedKey="{PaisRes}" items="{/PaisSet}">
+
+
+
+											                <items>
+
+
+
+											                    <sap.ui.core:ListItem id="oLIPaisRes_copy" text="{Landx}" key="{Land1}"/>
+
+
+
+											                </items>
+
+
+
+											            </Select>
+
+
+
+											        </sap.ui.layout.form:fields></sap.ui.layout.form:FormElement>
+
+
+
+											    <sap.ui.layout.form:FormElement id="__element49">
+
+
+
+											        <sap.ui.layout.form:label>
+
+
+
+											            <Label id="oLDptoRes" class="word-wrap" text="Departamento de Residencia" width="100%" required="true"/>
+
+
+
+											        </sap.ui.layout.form:label>
+
+
+
+											        <sap.ui.layout.form:fields>
+
+
+
+											            <Select id="oSDptoRes" class="no-editable" busy="true" selectedKey="{DptoRes}">
+
+
+
+											                <items>
+
+
+
+											                    <sap.ui.core:ListItem id="oLIDptoRes"/>
+
+
+
+											                </items>
+
+
+
+											            </Select>
+
+
+
+											        </sap.ui.layout.form:fields></sap.ui.layout.form:FormElement>
+
+
+
+											    <sap.ui.layout.form:FormElement id="__element50">
+
+
+
+											        <sap.ui.layout.form:label>
+
+
+
+											            <Label id="oLCiudadRes" class="word-wrap" text="Ciudad de Residencia" width="100%" required="true"/>
+
+
+
+											        </sap.ui.layout.form:label>
+
+
+
+											        <sap.ui.layout.form:fields>
+
+
+
+											            <Input id="oICiudadRes" value="{TxtCiudadRes}" width="100%" editable="false"/>
+
+
+
+											        </sap.ui.layout.form:fields></sap.ui.layout.form:FormElement>
+
+
+
+											</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container10_copy2">
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container20">
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer>
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement>
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLTelRes" required="true" text="Teléfono de Residencia" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Input change="datosDatosPersonales" editable="false" maxLength="3" fieldWidth="50%" id="oITelInd" type="Number" value="{IndicativoRes}" width="100%">
+
+
+
+																<layoutData>
+
+
+
+																	<l:GridData indentXL="0" id="__data81" spanL="2" indentLarge="0" indentL="0" indentM="0" indentMedium="0" indentS="0" indentSmall="0" spanLarge="2" spanM="2" spanMedium="2" spanS="0" spanSmall="0" spanXL="2"/>
+
+
+
+																</layoutData>
+
+
+
+															</Input>
+
+
+
+															<Input change="datosDatosPersonales" editable="false" id="oITelRes" type="Number" value="{TelefonoRes}" width="100%"/>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer>
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement>
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLCelular" required="true" text="Teléfono Celular" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Input change="datosDatosPersonales" editable="false" maxLength="3" fieldWidth="50%" id="oICelularInd" type="Number" value="{IndicativoAlterno}" width="100%">
+
+
+
+																<layoutData>
+
+
+
+																	<l:GridData indentXL="0" id="__data80" spanL="2" indentLarge="0" indentL="0" indentM="0" indentMedium="0" indentS="0" indentSmall="0" spanLarge="2" spanM="2" spanMedium="2" spanS="0" spanSmall="0" spanXL="2"/>
+
+
+
+																</layoutData>
+
+
+
+															</Input>
+
+
+
+															<Input change="datosDatosPersonales" editable="false" fieldWidth="50%"  maxLength="3" id="oICelular1" type="Number" value="{Celular_p1}" width="100%">
+
+
+
+																<layoutData>
+
+
+
+																	<l:GridData indentXL="0" id="__data32" spanL="2" indentLarge="0" indentL="0" indentM="0" indentMedium="0" indentS="0" indentSmall="0" spanLarge="2" spanM="2" spanMedium="2" spanS="0" spanSmall="0" spanXL="2"/>
+
+
+
+																</layoutData>
+
+
+
+															</Input>
+
+
+
+															<Input change="datosDatosPersonales" editable="false" fieldWidth="100%" id="oICelular2" type="Number" value="{Celular_p2}" width="100%"/>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+														<sap.ui.layout.form:layoutData/>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+												<sap.ui.layout.form:layoutData/>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+										</sap.ui.layout.form:formContainers>
+
+
+
+									</sap.ui.layout.form:Form>
+
+
+
+									<sap.ui.layout.form:Form editable="true" id="__form6">
+
+
+
+										<sap.ui.layout.form:layout>
+
+
+
+											<sap.ui.layout.form:ResponsiveGridLayout breakpointL="800" breakpointM="400" columnsL="3" emptySpanL="1" emptySpanM="1" emptySpanS="1" id="__layout2" labelSpanL="4" labelSpanM="4" labelSpanS="12"/>
+
+
+
+										</sap.ui.layout.form:layout>
+
+
+
+										<sap.ui.layout.form:formContainers>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container15">
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement>
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label id="oLDireccion" required="true" text="Dirección" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Input editable="false" change="datosDatosPersonales" fieldWidth="100%" id="oIDirGen" value="{DirRes}" showValueHelp="true" valueHelpRequest="helpRequestDireccion" width="100%">
+
+
+
+																<layoutData>
+
+
+
+																	<l:GridData indentS="0" indentXL="0" indentSmall="0" indentLarge="0" indentL="0" indentM="0" indentMedium="0" id="__data27" spanL="4" spanLarge="4" spanM="4" spanMedium="4" spanS="0" spanSmall="0" spanXL="0"/>
+
+
+
+																</layoutData>
+
+
+
+															</Input>
+
+
+
+															<Button id="oBtnDir" text="Tomar Dirección" press="onPress" width="80%"/>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+													<!--    <sap.ui.layout.form:FormElement>-->
+
+
+
+													<!--      <sap.ui.layout.form:label>-->
+
+
+
+													<!--        <Label id="oLDireccion" required="true" text="Dirección" width="100%"/>-->
+
+
+
+													<!--      </sap.ui.layout.form:label>-->
+
+
+
+													<!--      <sap.ui.layout.form:fields>-->
+
+
+
+													<!--        <Select busy="true" change="datosDatosPersonales" class="no-editable" id="oSDir1" selectedItemId="{DirRes}" selectedKey="{DirRes}">-->
+
+
+
+													<!--        <Select busy="true" change="datosDatosPersonales" class="no-editable" items="{/DireccionSet}" id="oSDir1" selectedItemId="{DirRes}" selectedKey="{DirRes}">-->
+
+
+
+													<!--          <items>-->
+
+
+
+													<!--          <sap.ui.core:ListItem id="oLIDir1" key="{Codigo}" text="{Texto}"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir1_Vacio" key="oLIDir1_Vacio" text=""/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir1_cll" key="Cll." text="Cll."/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir1_cra" key="Cra." text="Cra."/>-->
+
+
+
+													<!--          </items>-->
+
+
+
+													<!--          <layoutData>-->
+
+
+
+													<!--            <l:GridData indentL="0" indentSmall="0" indentM="0" indentS="0" indentLarge="0" indentMedium="0" indentXL="0" spanL="3" spanLarge="3" spanM="3"-->
+
+
+
+													<!--              spanMedium="3" spanS="3" spanSmall="3" spanXL="0"/>-->
+
+
+
+													<!--          </layoutData>-->
+
+
+
+													<!--        </Select>-->
+
+
+
+													<!--        <Input editable="false" change="datosDatosPersonales" id="oSDir2" type="Number" value="{NumRes1}" width="100%">-->
+
+
+
+													<!--          <layoutData>-->
+
+
+
+													<!--            <l:GridData id="__data27" indentS="0" indentLarge="0" indentMedium="0" indentL="0" indentM="0" indentSmall="0" indentXL="0" spanL="2" spanLarge="2"-->
+
+
+
+													<!--              spanM="2" spanMedium="2" spanS="2" spanSmall="2" spanXL="0"/>-->
+
+
+
+													<!--          </layoutData>-->
+
+
+
+													<!--        </Input>-->
+
+
+
+													<!--        <Select busy="true" change="datosDatosPersonales" class="no-editable" id="oSDir3" selectedItemId="{LetraRes1}" selectedKey="{LetraRes1}">-->
+
+
+
+													<!--          <items>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_Vacio" key="oSDir3_Vacio" text=""/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_a" key="A" text="A"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_b" key="B" text="B"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_c" key="C" text="C"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_d" key="D" text="D"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_e" key="E" text="E"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_f" key="F" text="F"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_g" key="G" text="G"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_h" key="H" text="H"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_i" key="I" text="I"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_j" key="J" text="J"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_k" key="K" text="K"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_l" key="L" text="L"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_m" key="M" text="M"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_n" key="N" text="N"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_o" key="O" text="O"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_p" key="P" text="P"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_q" key="Q" text="Q"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_r" key="R" text="R"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_s" key="S" text="S"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_t" key="T" text="T"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_u" key="U" text="U"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_v" key="V" text="V"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_w" key="W" text="W"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_x" key="X" text="X"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_y" key="Y" text="Y"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir3_z" key="Z" text="Z"/>-->
+
+
+
+													<!--          </items>-->
+
+
+
+													<!--          <layoutData>-->
+
+
+
+													<!--            <l:GridData indentL="0" indentSmall="0" indentM="0" indentS="0" indentLarge="0" indentMedium="0" indentXL="0" spanL="3" spanLarge="3" spanM="3"-->
+
+
+
+													<!--              spanMedium="3" spanS="3" spanSmall="3" spanXL="0"/>-->
+
+
+
+													<!--          </layoutData>-->
+
+
+
+													<!--        </Select>-->
+
+
+
+													<!--      </sap.ui.layout.form:fields>-->
+
+
+
+													<!--    </sap.ui.layout.form:FormElement>-->
+
+
+
+													<!--  </sap.ui.layout.form:formElements>-->
+
+
+
+													<!--</sap.ui.layout.form:FormContainer>-->
+
+
+
+													<!--<sap.ui.layout.form:FormContainer id="__container16">-->
+
+
+
+													<!--  <sap.ui.layout.form:formElements>-->
+
+
+
+													<!--    <sap.ui.layout.form:FormElement id="__element34">-->
+
+
+
+													<!--      <sap.ui.layout.form:label/>-->
+
+
+
+													<!--      <sap.ui.layout.form:fields>-->
+
+
+
+													<!--        <Text id="oTNumeral" maxLines="0" text="#" textAlign="End">-->
+
+
+
+													<!--          <layoutData>-->
+
+
+
+													<!--            <l:GridData indentL="0" indentSmall="0" indentM="0" indentS="0" indentLarge="0" indentMedium="0" indentXL="0" spanL="2" spanLarge="2" spanM="2"-->
+
+
+
+													<!--              spanMedium="2" spanS="2" spanSmall="2" spanXL="0"/>-->
+
+
+
+													<!--          </layoutData>-->
+
+
+
+													<!--        </Text>-->
+
+
+
+													<!--        <Input editable="false" change="datosDatosPersonales" id="oIDir4" value="{NumRes2}" width="100%">-->
+
+
+
+													<!--          <layoutData>-->
+
+
+
+													<!--            <l:GridData indentL="0" indentSmall="0" indentM="0" indentS="0" indentLarge="0" indentMedium="0" indentXL="0" spanL="3" spanLarge="3" spanM="3"-->
+
+
+
+													<!--              spanMedium="3" spanS="3" spanSmall="3" spanXL="0"/>-->
+
+
+
+													<!--          </layoutData>-->
+
+
+
+													<!--        </Input>-->
+
+
+
+													<!--        <Select busy="true" change="datosDatosPersonales" class="no-editable" id="oSDir5" selectedItemId="{LetraRes2}" selectedKey="{LetraRes2}">-->
+
+
+
+													<!--          <layoutData>-->
+
+
+
+													<!--            <l:GridData indentL="0" indentSmall="0" indentM="0" indentS="0" indentLarge="0" indentMedium="0" indentXL="0" spanL="3" spanLarge="3" spanM="3"-->
+
+
+
+													<!--              spanMedium="3" spanS="3" spanSmall="3" spanXL="0"/>-->
+
+
+
+													<!--          </layoutData>-->
+
+
+
+													<!--          <items>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_vacio" key="oLIDir5_vacio" text=""/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_a" key="A" text="A"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_b" key="B" text="B"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_c" key="C" text="C"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_d" key="D" text="D"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_e" key="E" text="E"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_f" key="F" text="F"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_g" key="G" text="G"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_h" key="H" text="H"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_i" key="I" text="I"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_j" key="J" text="J"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_k" key="K" text="K"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_l" key="L" text="L"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_m" key="M" text="M"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_n" key="N" text="N"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_o" key="O" text="O"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_p" key="P" text="P"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_q" key="Q" text="Q"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_r" key="R" text="R"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_s" key="S" text="S"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_t" key="T" text="T"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_u" key="U" text="U"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_v" key="V" text="V"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_w" key="W" text="W"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_x" key="X" text="X"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_y" key="Y" text="Y"/>-->
+
+
+
+													<!--            <sap.ui.core:ListItem id="oLIDir5_z" key="Z" text="Z"/>-->
+
+
+
+													<!--          </items>-->
+
+
+
+													<!--        </Select>-->
+
+
+
+													<!--        <Text id="oTGuion" maxLines="0" text="-" textAlign="Center">-->
+
+
+
+													<!--          <layoutData>-->
+
+
+
+													<!--            <l:GridData indentL="0" indentSmall="0" indentM="0" indentS="0" indentLarge="0" indentMedium="0" indentXL="0" spanL="1" spanLarge="1" spanM="1"-->
+
+
+
+													<!--              spanMedium="1" spanS="1" spanSmall="1" spanXL="0"/>-->
+
+
+
+													<!--          </layoutData>-->
+
+
+
+													<!--        </Text>-->
+
+
+
+													<!--        <Input editable="false" change="datosDatosPersonales" id="oIDir6" value="{NumRes3}" width="100%">-->
+
+
+
+													<!--          <layoutData>-->
+
+
+
+													<!--            <l:GridData indentL="0" indentSmall="0" indentM="0" indentS="0" indentLarge="0" indentMedium="0" indentXL="0" spanL="3" spanLarge="3" spanM="3"-->
+
+
+
+													<!--              spanMedium="3" spanS="3" spanSmall="3" spanXL="0"/>-->
+
+
+
+													<!--          </layoutData>-->
+
+
+
+													<!--        </Input>-->
+
+
+
+													<!--        <Input editable="false" change="datosDatosPersonales" id="oIDir7" value="{DirResEsp}" width="100%">-->
+
+
+
+													<!--          <layoutData>-->
+
+
+
+													<!--            <l:GridData indentL="0" indentSmall="0" indentM="0" indentS="0" indentLarge="0" indentMedium="0" indentXL="0" spanL="3" spanLarge="3" spanM="3"-->
+
+
+
+													<!--              spanMedium="3" spanS="3" spanSmall="3" spanXL="0"/>-->
+
+
+
+													<!--          </layoutData>-->
+
+
+
+													<!--        </Input>-->
+
+
+
+													<!--      </sap.ui.layout.form:fields>-->
+
+
+
+													<!--    </sap.ui.layout.form:FormElement>-->
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+										</sap.ui.layout.form:formContainers>
+
+
+
+									</sap.ui.layout.form:Form>
+
+
+
+									<sap.ui.layout.form:Form editable="true" id="__form7">
+
+
+
+										<sap.ui.layout.form:formContainers>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container17">
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element32">
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLDiscapacidad" text="Se reconoce como persona con discapacidad" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Select busy="true" change="enableDiscapacidad" class="no-editable" id="oSDiscapacidad" selectedKey="{ZzDiscapacitado}">
+
+
+
+																<items>
+
+
+
+																	<sap.ui.core:ListItem id="oLIDiscapacidad_vacio" key="oLIDiscapacidad_vacio" text=""/>
+
+
+
+																	<sap.ui.core:ListItem id="oLIDiscapacidad_S" key="S" text="Si"/>
+
+
+
+																	<sap.ui.core:ListItem id="oLIDiscapacidad_N" key="N" text="No"/>
+
+
+
+																</items>
+
+
+
+																<layoutData>
+
+
+
+																	<l:GridData spanL="2" indentL="0" spanLarge="2" indentM="0" indentLarge="0" indentMedium="0" indentS="0" indentSmall="0" indentXL="0" spanM="2" spanMedium="2" spanS="4" spanSmall="4" spanXL="0"/>
+
+
+
+																</layoutData>
+
+
+
+															</Select>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element33">
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label id="oLDiscapacidad_cual" text="Cuál?" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Select busy="true" change="datosDatosPersonales" class="no-editable" id="oSDiscapacidad_cual" items="{/InvalidezSet}" selectedKey="{Chtyp}">
+
+
+
+																<items>
+
+
+
+																	<sap.ui.core:ListItem id="oLIDiscapacidad" key="{Chtyp}" text="{Chtypt}"/>
+
+
+
+																	<!--<sap.ui.core:ListItem id="oLIDiscapacidad_cual_visual" key="oLIDiscapacidad_cual_visual" text="Visual"/>-->
+
+
+
+																	<!--<sap.ui.core:ListItem id="oLIDiscapacidad_cual_auditiva" key="oLIDiscapacidad_cual_auditiva" text="Auditiva"/>-->
+
+
+
+																</items>
+
+
+
+																<layoutData>
+
+
+
+																	<l:GridData spanL="5" indentL="0" spanLarge="5" indentM="0" indentLarge="0" indentMedium="0" indentS="0" indentSmall="0" indentXL="0" spanM="5" spanMedium="5" spanS="5" spanSmall="5" spanXL="0"/>
+
+
+
+																</layoutData>
+
+
+
+															</Select>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container18">
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element35">
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLEtnia" text="Se reconoce como integrante que pertenece a un Grupo Étnico" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Select busy="true" change="enableEtnia" class="no-editable" id="oSEtnia" selectedKey="{ZzGpEtnico}">
+
+
+
+																<items>
+
+
+
+																	<sap.ui.core:ListItem id="oLIEtnia_vacio" key="oLIEtnia_vacio" text=""/>
+
+
+
+																	<sap.ui.core:ListItem id="oLIEtnia_S" key="S" text="Si"/>
+
+
+
+																	<sap.ui.core:ListItem id="oLIEtnia_N" key="N" text="No"/>
+
+
+
+																</items>
+
+
+
+																<layoutData>
+
+
+
+																	<l:GridData spanL="2" indentL="0" spanLarge="2" indentM="0" indentLarge="0" indentMedium="0" indentS="0" indentSmall="0" indentXL="0" spanM="2" spanMedium="2" spanS="4" spanSmall="4" spanXL="0"/>
+
+
+
+																</layoutData>
+
+
+
+															</Select>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element36">
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label id="oLEtnia_cual" text="Cuál?" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Select busy="true" change="datosDatosPersonales" class="no-editable" id="oSEtnia_cual" items="{/EtniaSet}" selectedKey="{EthnicGrp}">
+
+
+
+																<items>
+
+
+
+																	<sap.ui.core:ListItem id="oLIEtnia" key="{Ethnic}" text="{Ethnict}"/>
+
+
+
+																	<!--<sap.ui.core:ListItem id="oLIEtnia_cual_afro" key="oLIEtnia_cual_afro" text="Afrodescendiente"/>-->
+
+
+
+																	<!--<sap.ui.core:ListItem id="oLIEtnia_cual_mulato" key="oLIEtnia_cual_mulato" text="Mulato"/>-->
+
+
+
+																</items>
+
+
+
+																<layoutData>
+
+
+
+																	<l:GridData spanL="5" indentL="0" spanLarge="5" indentM="0" indentLarge="0" indentMedium="0" indentS="0" indentSmall="0" indentXL="0" spanM="5" spanMedium="5" spanS="7" spanSmall="7" spanXL="0"/>
+
+
+
+																</layoutData>
+
+
+
+															</Select>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+											<sap.ui.layout.form:FormContainer id="__container19">
+
+
+
+												<sap.ui.layout.form:formElements>
+
+
+
+													<sap.ui.layout.form:FormElement id="__element37">
+
+
+
+														<sap.ui.layout.form:label>
+
+
+
+															<Label class="word-wrap" id="oLConflicto" text="Se reconoce como víctima del conflicto armado en Colombia" width="100%"/>
+
+
+
+														</sap.ui.layout.form:label>
+
+
+
+														<sap.ui.layout.form:fields>
+
+
+
+															<Select busy="true" change="datosDatosPersonales" class="no-editable" id="oSConflicto" selectedKey="{ZzVictima}">
+
+
+
+																<items>
+
+
+
+																	<sap.ui.core:ListItem id="oLIConflicto_vacio" key="oLIConflicto_vacio" text=""/>
+
+
+
+																	<sap.ui.core:ListItem id="oLIConflicto_S" key="S" text="Si"/>
+
+
+
+																	<sap.ui.core:ListItem id="oLIConflicto_N" key="N" text="No"/></items>
+
+
+
+																<layoutData>
+
+
+
+																	<l:GridData spanL="2" indentL="0" spanLarge="2" indentM="0" indentLarge="0" indentMedium="0" indentS="0" indentSmall="0" indentXL="0" spanM="2" spanMedium="2" spanS="4" spanSmall="4" spanXL="0"/>
+
+
+
+																</layoutData>
+
+
+
+															</Select>
+
+
+
+														</sap.ui.layout.form:fields>
+
+
+
+													</sap.ui.layout.form:FormElement>
+
+
+
+												</sap.ui.layout.form:formElements>
+
+
+
+											</sap.ui.layout.form:FormContainer>
+
+
+
+										</sap.ui.layout.form:formContainers>
+
+
+
+										<sap.ui.layout.form:layout>
+
+
+
+											<sap.ui.layout.form:ResponsiveGridLayout breakpointL="800" breakpointM="400" id="__layout3" labelSpanM="4"/>
+
+
+
+										</sap.ui.layout.form:layout>
+
+
+
+									</sap.ui.layout.form:Form>
+
+
+
+								</content>
+
+
+
+							</IconTabFilter>
+
+
+
+							<IconTabSeparator icon="sap-icon://open-command-field"/>
+
+
+
+							<IconTabFilter design="Horizontal" icon="sap-icon://inspection" iconColor="Neutral" id="oITFDatosAcademicos" text="Datos Académicos">
+
+
+
+								<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" labelMinWidth="192" emptySpanS="0" columnsL="2" emptySpanL="0" editable="true" columnsM="2" emptySpanM="0" id="__form3" labelSpanL="4" labelSpanM="4" labelSpanS="12" layout="ResponsiveGridLayout" minWidth="0" width="100%">
+
+
+
+									<sap.ui.layout.form:content>
+
+
+
+										<Label id="__labe21" required="true" text="Universidad" textAlign="Begin" width="100%"/>
+
+
+
+										<Input change="datosEduPregrado" id="oIUniversidad" value="{Stext}" showValueHelp="true" valueHelpRequest="helpRequestUniversidad" width="100%"/>
+
+
+
+										<Button class="sapUiSmallMarginBottom" id="OBtnBuscarUni" press="onPress" text="Buscar Universidad" width="160px"/>
+
+
+
+										<Label id="__labe22" required="true" text="Departamento Universidad" width="100%"/>
+
+
+
+										<Input editable="false" fieldWidth="60%" value="{Dpto}" id="oIDptoUniversidad" maxWidth="70%" width="50%"/>
+
+
+
+										<Label id="__labe23" required="true" text="Ciudad Universidad" width="100%"/>
+
+
+
+										<Input editable="false" fieldWidth="50%" value="{Ciudad}" id="oICiudadUniversidad" maxWidth="70%" width="50%"/>
+
+
+
+										<Label id="__labe50" required="true" text="Titulo Otorgado" width="100%"/>
+
+
+
+										<Input change="datosEduPregrado" id="oITitulo" value="{Degreestext}" showValueHelp="true" valueHelpRequest="helpRequestTitulo" width="100%"/>
+
+
+
+										<Button class="sapUiSmallMarginBottom" id="OBtnBuscarTitulo" press="onPress" text="Buscar Titulo" width="140px"/>
+
+
+
+										<Label id="__labe12" required="true" text="Fecha de Grado" width="100%"/>
+
+
+
+										<Select autoAdjustWidth="false" change="datosEduPregrado" id="oSDiaFechaGrado">
+
+
+
+											<!--<items> selectedKey="oKeyDia_0"-->
+
+
+
+											<!--	<sap.ui.core:ListItem id="oIdDia_0" key="oKeyDia_0" text=""/>-->
+
+
+
+											<!--</items>-->
+
+
+
+											<layoutData>
+
+
+
+												<l:GridData indentXL="0" id="__data41" spanL="1" indentMedium="0" indentL="0" indentM="0" indentLarge="0" indentS="0" indentSmall="0" spanLarge="1" spanM="1" spanMedium="1" spanS="2" spanSmall="2" spanXL="1"/>
+
+
+
+											</layoutData>
+
+
+
+										</Select>
+
+
+
+										<Select autoAdjustWidth="false" change="datosEduPregrado" id="oSMesFechaGrado">
+
+
+
+											<layoutData>
+
+
+
+												<l:GridData spanL="2" indentL="0" spanLarge="2" indentS="0" indentLarge="0" indentMedium="0" indentM="0" indentSmall="0" indentXL="0" spanM="2" spanMedium="2" spanS="3" spanSmall="3" spanXL="3"/>
+
+
+
+											</layoutData>
+
+
+
+											<!--<items> selectedKey="oKeyMes_0"-->
+
+
+
+											<!--	<sap.ui.core:ListItem id="oIdMes_0" key="oKeyMes_0" text=""/>-->
+
+
+
+											<!--</items>-->
+
+
+
+										</Select>
+
+
+
+										<Select autoAdjustWidth="true" change="datosEduPregrado" items="{/YearSet}" id="oSYearFechaGrado">
+
+
+
+											<layoutData>
+
+
+
+												<l:GridData spanL="2" indentL="0" spanLarge="2" indentS="0" indentLarge="0" indentMedium="0" indentM="0" indentSmall="0" indentXL="0" spanM="2" spanMedium="2" spanS="3" spanSmall="3" spanXL="3"/>
+
+
+
+											</layoutData>
+
+
+
+											<items>
+
+
+
+												<sap.ui.core:ListItem id="oIdYear" key="{Yearkey}" text="{Yeartext}"/>
+
+
+
+											</items>
+
+
+
+										</Select>
+
+
+
+									</sap.ui.layout.form:content>
+
+
+
+									<sap.ui.layout.form:title>
+
+
+
+										<sap.ui.core:Title id="oTEduPre" text="Educación Pregrado"/>
+
+
+
+									</sap.ui.layout.form:title>
+
+
+
+								</sap.ui.layout.form:SimpleForm>
+
+
+
+							</IconTabFilter>
+
+
+
+							<IconTabSeparator icon="sap-icon://open-command-field"/>
+
+
+
+							<IconTabFilter design="Horizontal" icon="sap-icon://documents" iconColor="Neutral" id="oITFDatosLaborales" text="Datos Laborales">
+
+
+
+								<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" emptySpanM="0" labelMinWidth="300" columnsL="2" columnsM="2" emptySpanL="0" editable="true" id="__form4" labelSpanL="4" labelSpanM="4" labelSpanS="12" layout="ResponsiveGridLayout" minWidth="0" width="100%">
+
+
+
+									<sap.ui.layout.form:content>
+
+
+
+										<Label id="" required="true" text="Actualmente Trabaja" textAlign="Begin" width="100%"/>
+
+
+
+										<Select autoAdjustWidth="true" change="datosDatosLaborales" id="oSTrabajo" maxWidth="30%" name="" type="Default" width="20%">
+
+
+
+											<items>
+
+
+
+												<sap.ui.core:ListItem id="oCBT_vacio" key="oCBT_vacio" text=""/>
+
+
+
+												<sap.ui.core:ListItem id="oCBT_SI" key="oCBT_SI" text="Si"/>
+
+
+
+												<sap.ui.core:ListItem id="oCBT_NO" key="oCBT_NO" text="No"/>
+
+
+
+											</items>
+
+
+
+										</Select>
+
+
+
+										<Label class="word-wrap" required="true" text="Empresa (actual o último realizado)" width="100%"/>
+
+
+
+										<Input change="datosDatosLaborales" fieldWidth="70%" maxLength="20" id="oIEmpresa" maxWidth="70%" width="50%"/>
+
+
+
+										<Label class="word-wrap" required="true" text="Cargo (actual o último realizado)" width="100%"/>
+
+
+
+										<Input change="datosDatosLaborales" id="oICargo" showValueHelp="true" valueHelpRequest="helpRequestCargo" width="100%"/>
+
+
+
+										<Button class="sapUiSmallMarginBottom" id="OBtnBuscarCargo" press="onPress" text="Buscar Cargo" width="140px"/>
+
+
+
+										<Label class="word-wrap" required="true" text="Teléfono de la Empresa (actual o último realizado)" width="100%"/>
+
+
+
+										<Input change="datosDatosLaborales" fieldWidth="70%" id="oITel" maxWidth="70%" type="Number" width="50%"/>
+
+
+
+										<Label class="word-wrap" required="true" text="Años de experiencia laboral" width="100%"/>
+
+
+
+										<Input change="datosDatosLaborales" fieldWidth="70%" id="oIExpLab" maxWidth="70%" type="Number" width="50%"/>
+
+
+
+										<Label class="word-wrap" required="true" text="Correo Electrónico empresarial" width="100%"/>
+
+
+
+										<Input change="validarEmail" fieldWidth="70%" id="oIEmailEmp" maxWidth="70%" type="Email" width="50%"/>
+
+
+
+									</sap.ui.layout.form:content>
+
+
+
+									<sap.ui.layout.form:title>
+
+
+
+										<sap.ui.core:Title id="oTDatLab" text="Datos Laborales"/>
+
+
+
+									</sap.ui.layout.form:title>
+
+
+
+								</sap.ui.layout.form:SimpleForm>
+
+
+
+							</IconTabFilter>
+
+
+
+							<IconTabSeparator icon="sap-icon://open-command-field"/>
+
+
+
+							<IconTabFilter design="Horizontal" icon="sap-icon://documents" iconColor="Neutral" id="oITFDatosReferencias" text="Datos Referencias">
+
+
+
+								<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" labelSpanL="4" id="__form5" columnsL="1" emptySpanL="0" editable="true" columnsM="1" emptySpanM="0" labelMinWidth="192" labelSpanM="4" labelSpanS="12" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="0" width="100%">
+
+
+
+									<sap.ui.layout.form:content>
+
+
+
+										<Title id="TitleRefPerx" level="H5" text="Referencia Personal" textAlign="Center" titleStyle="H5" width="100%"/>
+
+
+
+										<Label class="word-wrap" required="true" text="Número Identificación referencia personal y/o familiar" width="100%"/>
+
+
+
+										<Input change="datosDatosReferencias" fieldWidth="70%" id="oINumRef" maxWidth="100%" type="Number" width="100%"/>
+
+
+
+										<Button class="sapUiSmallMarginBottom" id="OBtnBuscarRef" press="onPress" text="Buscar" width="100px"/>
+
+
+
+										<Label class="word-wrap" required="true" text="Nombre referencia personal y/o familiar" width="100%"/>
+
+
+
+										<Input change="datosDatosReferencias" editable="false" fieldWidth="70%" id="oINonRef" maxWidth="70%" value="{FullName}" width="50%"/>
+
+
+
+										<Label class="word-wrap" required="true" text="Teléfono (Referencia)" width="100%"/>
+
+
+
+										<Input change="datosDatosReferencias" editable="false" fieldWidth="70%" id="oITelRef" maxWidth="70%" type="Tel" value="{TelNumber}" width="50%"/>
+
+
+
+										<Label class="word-wrap" required="true" text="Celular (Referencia)" width="100%"/>
+
+
+
+										<Input change="datosDatosReferencias" editable="false" fieldWidth="70%" id="oICelRef" maxWidth="70%" value="{CelNumber}" width="50%"/>
+
+
+
+										<Label class="word-wrap" required="true" text="Correo Electrónico (Referencia)" width="100%"/>
+
+
+
+										<Input change="validarEmail" editable="false" fieldWidth="70%" id="oIEmailRef" maxWidth="70%" type="Email" value="{SmtpAddr}" width="50%"/>
+
+
+
+										<sap.ui.core:Title id="TitleRefMed" level="Auto" text=""/>
+
+
+
+										<Title id="TitleRefMedx" level="H5" text="Referencia medios publicitarios" textAlign="Center" titleStyle="H5" width="100%"/>
+
+
+
+										<Label class="word-wrap" required="true" text="Medio por donde conoció la universidad/programa al que se inscribe" width="100%"/>
+
+
+
+										<Select autoAdjustWidth="true" change="datosDatosReferencias" items="{/MedioSet}" id="oCBMedUni">
+
+
+
+										    <items>
+
+
+
+												<sap.ui.core:ListItem id="oLIMedio" key="{ZzConocio}" text="{ZzConociot}"/>
+
+
+
+											</items>
+
+
+
+										<layoutData>
+
+
+
+										    <l:GridData spanXL="0" spanL="0" spanM="0" spanS="0" indentXL="0" indentL="0" indentM="0" indentS="0" spanLarge="0" spanMedium="0" spanSmall="0" indentLarge="0" indentMedium="0" indentSmall="0" id="__data44"/>
+
+
+
+										</layoutData>
+
+
+
+										</Select>
+
+
+
+										<!--<ComboBox id="oCBMedUni" items="{/MedioSet}" maxWidth="60%" selectionChange="datosDatosReferencias" width="50%">-->
+
+
+
+										<!--	<items>-->
+
+
+
+										<!--		<sap.ui.core:ListItem id="oLIMedio" key="{ZzConocio}" text="{ZzConociot}"/>-->
+
+
+
+										<!--	</items>-->
+
+
+
+										<!--</ComboBox>-->
+
+
+
+										<Label class="word-wrap" required="true" text="Razón por la cual decidió presentarse a la universidad" width="100%"/>
+
+
+
+										<Select autoAdjustWidth="true" change="datosDatosReferencias" items="{/RazonSet}" id="oCBRazUni">
+
+
+
+										    <items>
+
+
+
+												<sap.ui.core:ListItem id="oLIRazon" key="{DomvalueL}" text="{Ddtext}"/>
+
+
+
+											</items>
+
+
+
+										<layoutData>
+
+
+
+										    <l:GridData spanXL="0" spanL="0" spanM="0" spanS="0" indentXL="0" indentL="0" indentM="0" indentS="0" spanLarge="0" spanMedium="0" spanSmall="0" indentLarge="0" indentMedium="0" indentSmall="0" id="__data45"/>
+
+
+
+										</layoutData>
+
+
+
+										</Select>
+
+
+
+										<!--<ComboBox id="oCBRazUni" items="{/RazonSet}" maxWidth="60%" selectionChange="datosDatosReferencias" width="50%">-->
+
+
+
+										<!--	<items>-->
+
+
+
+										<!--		<sap.ui.core:ListItem id="oLIRazon" key="{DomvalueL}" text="{Ddtext}"/>-->
+
+
+
+										<!--	</items>-->
+
+
+
+										<!--</ComboBox>-->
+
+
+
+									</sap.ui.layout.form:content>
+
+
+
+									<sap.ui.layout.form:title>
+
+
+
+										<sap.ui.core:Title id="oTDatref" text="Datos Referencias"/>
+
+
+
+									</sap.ui.layout.form:title>
+
+
+
+								</sap.ui.layout.form:SimpleForm>
+
+
+
+							</IconTabFilter>
+
+
+
+							<IconTabSeparator icon="sap-icon://open-command-field"/>
+
+
+
+							<IconTabFilter design="Horizontal" icon="sap-icon://documents" iconColor="Neutral" id="oITFPagar" text="Resumen">
+
+
+
+								<content>
+
+
+
+									<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" labelSpanL="4" id="__form9" columnsL="1" emptySpanL="0" editable="true" columnsM="1" emptySpanM="0" labelMinWidth="192" labelSpanM="4" labelSpanS="12" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="0" width="100%">
+
+
+
+										<sap.ui.layout.form:content>
+
+
+
+											<Title id="TitlePagar" level="H5" text="Resumen Inscripcion postgrados" textAlign="Center" titleStyle="H5" width="100%"/>
+
+
+
+											<Label class="word-wrap" text="Número Identificación" width="100%"/>
+
+
+
+											<Text id="oTNumId" text="{Id}" width="100%"/>
+
+
+
+											<Label class="word-wrap" text="Sede" width="100%"/>
+
+
+
+											<Text id="oTSede" text="{SedeTxt}" width="100%"/>
+
+
+
+											<Label class="word-wrap" text="Programa" width="100%"/>
+
+
+
+											<Text id="oTPrograma" text="{Programa}" width="100%"/>
+
+
+
+											<Label class="word-wrap" text="Numero Factura" width="100%"/>
+
+
+
+											<Text id="oTNumFactura" text="{Factura}" width="100%"/>
+
+
+
+											<Label class="word-wrap" text="Valor Factura" width="100%"/>
+
+
+
+											<Text id="oTValorFactura" text="{ValorFactura} {MonedaFactura}" width="100%"/>
+
+
+
+											<Text class="sapUiSmallMarginBottom" id="oTMonedaFactura" width="100%"/>
+
+
+
+											<Label class="word-wrap" text="Fecha Vencimiento" width="100%"/>
+
+
+
+											<Text id="oTFechaFactura" width="100%"/>
+
+
+
+											<Label class="word-wrap" text="Mensaje" width="100%"/>
+
+
+
+											<Text class="word-wrap" id="oTMensaje" text="{Mensaje}" width="100%"/>
+
+
+
+										</sap.ui.layout.form:content>
+
+
+
+									</sap.ui.layout.form:SimpleForm>
+
+
+
+									<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" labelSpanL="4" id="__form10" columnsL="1" emptySpanL="0" editable="true" columnsM="1" emptySpanM="0" labelMinWidth="192" labelSpanM="4" labelSpanS="12" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="0" width="100%">
+
+
+
+										<sap.ui.layout.form:content>
+
+
+
+											<HBox alignItems="Stretch" id="__hbox1" justifyContent="Center" width="100%">
+
+
+
+												<Button id="oBtnPagar" press="onPress" text="Pagar" width="100px"/>
+
+
+
+											</HBox>
+
+
+
+										</sap.ui.layout.form:content>
+
+
+
+									</sap.ui.layout.form:SimpleForm>
+
+
+
+									<!--<sap.ui.core:HTML class="sapUiResponsiveMargin"-->
+
+
+
+									<!--  content="&lt;button src=&quot;http://usasrvvm-ued.datacenter.local:8000/sap/bc/webdynpro/sap/zwdslcm_pagosweb_tab?sap-client=190&quot;&gt;&lt;pagar/br&gt;&lt;/button&gt;"-->
+
+
+
+									<!--  width="auto"></sap.ui.core:HTML>-->
+
+
+
+								</content>
+
+
+
+							</IconTabFilter>
+
+
+
+						</items>
+
+
+
+					</IconTabBar>
+
+
+
+					<BusyDialog id="BusyDialog"/>
+
+
+
+				</content>
+
+
+
+			</Page>
+
+
+
+		</pages>
+
+
+
+	</App>
+
+
+
+</mvc:View>
